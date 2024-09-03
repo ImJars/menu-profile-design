@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { MdOutlineMenu, MdOutlineNotifications } from "react-icons/md";
 import { BiMessageDetail } from "react-icons/bi";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import { PiGearSix } from "react-icons/pi";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -28,16 +30,25 @@ function App() {
                   <MdOutlineNotifications className="text-pretty text-3xl" />
                   <button
                     onClick={changeActive}
-                    className="rounded-xl border-2 border-primary p-0.5"
+                    className="rounded-full border-2 border-primary"
                   >
-                    <MdOutlineMenu className="text-pretty text-3xl" />
+                    <img src="perfil.jpg" alt="" className="w-10 rounded-full" />
                   </button>
                 </div>
                 <div className="absolute top-14 right-6 border rounded-lg">
                   <div className="px-2 py-2">
-                    <h1 className="font-extrabold text-2xl text-white">
-                      Hello World!
-                    </h1>
+                    <div>
+                      <ul className="text-white">
+                        <li className="flex items-center my-2">
+                          <HiOutlineUserCircle className="text-2xl"/>
+                          <span className="ml-2">My Profile</span>
+                        </li>
+                        <li className="flex items-center my-2">
+                          <PiGearSix className="text-2xl"/>
+                          <span className="ml-2">Account Settings</span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
