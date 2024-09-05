@@ -135,6 +135,14 @@ function App() {
                             </div>
                           </button>
                         </li>
+                        <li>
+                          <button className="w-full flex justify-center border rounded-lg px-2 py-2">
+                            <div className="flex space-x-2">
+                              <BiLogOut className="text-2xl" />
+                              <span>Sign out all accounts</span>
+                            </div>
+                          </button>
+                        </li>
                       </ul>
                     </div>
                   </div>
