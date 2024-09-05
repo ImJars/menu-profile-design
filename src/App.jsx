@@ -79,7 +79,7 @@ function App() {
                         </li>
                         <li>
                           <button className="w-full h-full flex items-center my-2">
-                            <div className="flex">
+                            <div className="flex space-x-3">
                               <div>
                                 <img
                                   className="w-10 rounded-full border"
@@ -88,22 +88,51 @@ function App() {
                                 />
                               </div>
                               <div className="flex flex-col text-start">
-                                <span>Angel Ramirez</span>
-                                <span>hi.legacyier@gmail.com</span>
-                              </div>
-                              <div className="h-full flex items-center">
-                                <span className="relative flex h-3 w-3">
-                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
-                                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                                <span className="font-bold text-sm">
+                                  Angel Ramirez
                                 </span>
+                                <span className="text-xs">
+                                  hi.legacyier@gmail.com
+                                </span>
+                              </div>
+                              <div className="flex items-center">
+                                <div>
+                                  <span className="relative flex h-3 w-3">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                                  </span>
+                                </div>
                               </div>
                             </div>
                           </button>
                         </li>
                         <li className="flex items-center my-2">
-                          <button className="w-full flex items-center my-2">
-                            <BiLogOut className="text-2xl" />
-                            <span className="ml-2">Sign Out</span>
+                          <button className="w-full h-full flex items-center my-2">
+                            <div className="flex space-x-3">
+                              <div>
+                                <img
+                                  className="w-10 rounded-full border"
+                                  src="perfil.jpg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="flex flex-col text-start">
+                                <span className="font-bold text-sm">
+                                  Angel Ramirez
+                                </span>
+                                <span className="text-xs">
+                                  hi.legacyier@gmail.com
+                                </span>
+                              </div>
+                              <div className="flex items-center">
+                                <div>
+                                  <span className="relative flex h-3 w-3">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
                           </button>
                         </li>
                       </ul>
