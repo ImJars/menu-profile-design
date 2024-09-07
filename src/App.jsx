@@ -5,17 +5,13 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { PiGearSix } from "react-icons/pi";
 import { TbDeviceAnalytics } from "react-icons/tb";
 
+import { motion } from "framer-motion";
+
 function App() {
   const [active, setActive] = useState(false);
-  function changeActive() {
+  const changeActive = () => {
     setActive(!active);
-    if (active) {
-      document.querySelector(".absolute").style.display = "none";
-    } else {
-      document.querySelector(".absolute").style.display = "block";
-    }
-    console.log(active);
-  }
+  };
   return (
     <>
       <section className="h-screen w-screen bg-primary font-sans">
@@ -40,7 +36,12 @@ function App() {
                     />
                   </button>
                 </div>
-                <div className="absolute top-14 right-6 border rounded-lg">
+                <motion.div
+                  className={`absolute top-14 right-6 border rounded-lg ${!active ? 'hidden' : ''}`}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: active ? 1 : 0, y: active ? 0 : -20 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="px-2 py-2">
                     <div>
                       <ul className="text-white border-b">
@@ -146,7 +147,7 @@ function App() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
