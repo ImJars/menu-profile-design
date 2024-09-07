@@ -14,17 +14,17 @@ function App() {
   };
   return (
     <>
-      <section className="h-screen w-screen bg-primary font-sans">
-        <header className="bg-gradient-to-r from-secondary to-third w-full h-12">
+      <section className="h-screen w-screen bg-newPrimary font-sans">
+        <header className="bg-newSecondary w-full h-12">
           <div className="flex items-center h-full mx-6">
             <div className="flex justify-between w-full">
-              <h1 className="text-pretty text-2xl font-extrabold text-center h-full flex items-center">
+              <h1 className="text-newText text-pretty text-2xl font-extrabold text-center h-full flex items-center">
                 Jarsdev
               </h1>
               <div className="flex items-center static">
                 <div className="flex space-x-2 items-center">
-                  <BiMessageDetail className="text-pretty text-3xl" />
-                  <MdOutlineNotifications className="text-pretty text-3xl" />
+                  <BiMessageDetail className="text-newText text-pretty text-3xl" />
+                  <MdOutlineNotifications className="text-newText text-pretty text-3xl" />
                   <button
                     onClick={changeActive}
                     className="rounded-full border-2 border-primary"
@@ -37,7 +37,7 @@ function App() {
                   </button>
                 </div>
                 <motion.div
-                  className={`absolute top-14 right-6 border rounded-lg ${!active ? 'hidden' : ''}`}
+                  className={`bg-newThird px-3 py-4 absolute top-14 right-6 border-newThird rounded-lg ${!active ? 'hidden' : ''}`}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: active ? 1 : 0, y: active ? 0 : -20 }}
                   transition={{ duration: 0.3 }}
@@ -47,8 +47,8 @@ function App() {
                       <ul className="text-white border-b">
                         <li>
                           <button className="w-full flex items-center my-2">
-                            <HiOutlineUserCircle className="text-2xl" />
-                            <span className="ml-2">My Profile</span>
+                            <HiOutlineUserCircle className="text-newFifth text-2xl" />
+                            <span className="ml-2 text-newFifth text-sm font-semibold">My Profile</span>
                           </button>
                         </li>
                         <li className="flex items-center my-2">
