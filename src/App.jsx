@@ -6,6 +6,7 @@ import { PiGearSix } from "react-icons/pi";
 import { TbDeviceAnalytics } from "react-icons/tb";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Button from "./components/button";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -39,7 +40,9 @@ function App() {
                 <AnimatePresence>
                   {active && (
                     <motion.div
-                      className={'bg-newThird px-3 py-4 absolute top-14 right-6 border-newThird rounded-lg'}
+                      className={
+                        "bg-newThird px-3 py-4 absolute top-14 right-6 border-newThird rounded-lg"
+                      }
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: active ? 1 : 0, y: active ? 0 : -20 }}
                       exit={{ opacity: 0, y: -20 }}
@@ -47,39 +50,37 @@ function App() {
                     >
                       <div className="px-2 py-2">
                         <div>
-                          <ul className="text-white border-b">
-                            <li>
-                              <button className="w-full flex items-center my-2">
+                          <ul className="text-white border-b border-b-newFourth pb-2 mb-2">
+                            <Button
+                              icon={
                                 <HiOutlineUserCircle className="text-newFifth text-2xl" />
-                                <span className="ml-2 text-newFifth text-sm font-semibold">
-                                  My Profile
-                                </span>
-                              </button>
-                            </li>
-                            <li className="flex items-center my-2">
-                              <button className="w-full flex items-center my-2">
-                                <PiGearSix className="text-2xl" />
-                                <span className="ml-2">Account Settings</span>
-                              </button>
-                            </li>
+                              }
+                              title="My Profile"
+                            />
+                            <Button
+                              icon={
+                                <PiGearSix className="text-newFifth text-2xl" />
+                              }
+                              title="Account Settings"
+                            />
                           </ul>
-                          <ul className="text-white border-b">
-                            <li>
-                              <button className="w-full flex items-center my-2">
-                                <TbDeviceAnalytics className="text-2xl" />
-                                <span className="ml-2">Device Management</span>
-                              </button>
-                            </li>
-                            <li className="flex items-center my-2">
-                              <button className="w-full flex items-center my-2">
-                                <BiLogOut className="text-2xl" />
-                                <span className="ml-2">Sign Out</span>
-                              </button>
-                            </li>
+                          <ul className="text-white border-b border-b-newFourth pb-2 mb-2">
+                            <Button
+                              icon={
+                                <TbDeviceAnalytics className="text-newFifth text-2xl" />
+                              }
+                              title="Device Management"
+                            />
+                            <Button
+                              icon={
+                                <BiLogOut className="text-newFifth text-2xl" />
+                              }
+                              title="Sign Out"
+                            />
                           </ul>
                           <ul className="text-white">
                             <li>
-                              <span className="w-full flex items-center my-2">
+                              <span className="w-full flex my-2 text-newFifth text-md font-semibold">
                                 Switch Account
                               </span>
                             </li>
@@ -88,7 +89,7 @@ function App() {
                                 <div className="flex space-x-3">
                                   <div>
                                     <img
-                                      className="w-10 rounded-full border"
+                                      className="w-10 rounded-full border-newFourth border"
                                       src="perfil.jpg"
                                       alt=""
                                     />
