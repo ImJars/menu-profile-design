@@ -5,7 +5,7 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import { PiGearSix } from "react-icons/pi";
 import { TbDeviceAnalytics } from "react-icons/tb";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
   const [active, setActive] = useState(false);
@@ -36,118 +36,125 @@ function App() {
                     />
                   </button>
                 </div>
-                <motion.div
-                  className={`bg-newThird px-3 py-4 absolute top-14 right-6 border-newThird rounded-lg ${!active ? 'hidden' : ''}`}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: active ? 1 : 0, y: active ? 0 : -20 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="px-2 py-2">
-                    <div>
-                      <ul className="text-white border-b">
-                        <li>
-                          <button className="w-full flex items-center my-2">
-                            <HiOutlineUserCircle className="text-newFifth text-2xl" />
-                            <span className="ml-2 text-newFifth text-sm font-semibold">My Profile</span>
-                          </button>
-                        </li>
-                        <li className="flex items-center my-2">
-                          <button className="w-full flex items-center my-2">
-                            <PiGearSix className="text-2xl" />
-                            <span className="ml-2">Account Settings</span>
-                          </button>
-                        </li>
-                      </ul>
-                      <ul className="text-white border-b">
-                        <li>
-                          <button className="w-full flex items-center my-2">
-                            <TbDeviceAnalytics className="text-2xl" />
-                            <span className="ml-2">Device Management</span>
-                          </button>
-                        </li>
-                        <li className="flex items-center my-2">
-                          <button className="w-full flex items-center my-2">
-                            <BiLogOut className="text-2xl" />
-                            <span className="ml-2">Sign Out</span>
-                          </button>
-                        </li>
-                      </ul>
-                      <ul className="text-white">
-                        <li>
-                          <span className="w-full flex items-center my-2">
-                            Switch Account
-                          </span>
-                        </li>
-                        <li>
-                          <button className="w-full h-full flex items-center my-2">
-                            <div className="flex space-x-3">
-                              <div>
-                                <img
-                                  className="w-10 rounded-full border"
-                                  src="perfil.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="flex flex-col text-start">
-                                <span className="font-bold text-sm">
-                                  Angel Ramirez
+                <AnimatePresence>
+                  {active && (
+                    <motion.div
+                      className={'bg-newThird px-3 py-4 absolute top-14 right-6 border-newThird rounded-lg'}
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: active ? 1 : 0, y: active ? 0 : -20 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <div className="px-2 py-2">
+                        <div>
+                          <ul className="text-white border-b">
+                            <li>
+                              <button className="w-full flex items-center my-2">
+                                <HiOutlineUserCircle className="text-newFifth text-2xl" />
+                                <span className="ml-2 text-newFifth text-sm font-semibold">
+                                  My Profile
                                 </span>
-                                <span className="text-xs">
-                                  hi.legacyier@gmail.com
-                                </span>
-                              </div>
-                              <div className="flex items-center">
-                                <div>
-                                  <span className="relative flex h-3 w-3">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
-                                  </span>
+                              </button>
+                            </li>
+                            <li className="flex items-center my-2">
+                              <button className="w-full flex items-center my-2">
+                                <PiGearSix className="text-2xl" />
+                                <span className="ml-2">Account Settings</span>
+                              </button>
+                            </li>
+                          </ul>
+                          <ul className="text-white border-b">
+                            <li>
+                              <button className="w-full flex items-center my-2">
+                                <TbDeviceAnalytics className="text-2xl" />
+                                <span className="ml-2">Device Management</span>
+                              </button>
+                            </li>
+                            <li className="flex items-center my-2">
+                              <button className="w-full flex items-center my-2">
+                                <BiLogOut className="text-2xl" />
+                                <span className="ml-2">Sign Out</span>
+                              </button>
+                            </li>
+                          </ul>
+                          <ul className="text-white">
+                            <li>
+                              <span className="w-full flex items-center my-2">
+                                Switch Account
+                              </span>
+                            </li>
+                            <li>
+                              <button className="w-full h-full flex items-center my-2">
+                                <div className="flex space-x-3">
+                                  <div>
+                                    <img
+                                      className="w-10 rounded-full border"
+                                      src="perfil.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div className="flex flex-col text-start">
+                                    <span className="font-bold text-sm">
+                                      Angel Ramirez
+                                    </span>
+                                    <span className="text-xs">
+                                      hi.legacyier@gmail.com
+                                    </span>
+                                  </div>
+                                  <div className="flex items-center">
+                                    <div>
+                                      <span className="relative flex h-3 w-3">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                                      </span>
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                            </div>
-                          </button>
-                        </li>
-                        <li className="flex items-center my-2">
-                          <button className="w-full h-full flex items-center my-2">
-                            <div className="flex space-x-3">
-                              <div>
-                                <img
-                                  className="w-10 rounded-full border"
-                                  src="perfil.jpg"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="flex flex-col text-start">
-                                <span className="font-bold text-sm">
-                                  Angel Ramirez
-                                </span>
-                                <span className="text-xs">
-                                  hi.legacyier@gmail.com
-                                </span>
-                              </div>
-                              <div className="flex items-center">
-                                <div>
-                                  <span className="relative flex h-3 w-3">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
-                                  </span>
+                              </button>
+                            </li>
+                            <li className="flex items-center my-2">
+                              <button className="w-full h-full flex items-center my-2">
+                                <div className="flex space-x-3">
+                                  <div>
+                                    <img
+                                      className="w-10 rounded-full border"
+                                      src="perfil.jpg"
+                                      alt=""
+                                    />
+                                  </div>
+                                  <div className="flex flex-col text-start">
+                                    <span className="font-bold text-sm">
+                                      Angel Ramirez
+                                    </span>
+                                    <span className="text-xs">
+                                      hi.legacyier@gmail.com
+                                    </span>
+                                  </div>
+                                  <div className="flex items-center">
+                                    <div>
+                                      <span className="relative flex h-3 w-3">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-600 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+                                      </span>
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                            </div>
-                          </button>
-                        </li>
-                        <li>
-                          <button className="w-full flex justify-center border rounded-lg px-2 py-2">
-                            <div className="flex space-x-2">
-                              <BiLogOut className="text-2xl" />
-                              <span>Sign out all accounts</span>
-                            </div>
-                          </button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
+                              </button>
+                            </li>
+                            <li>
+                              <button className="w-full flex justify-center border rounded-lg px-2 py-2">
+                                <div className="flex space-x-2">
+                                  <BiLogOut className="text-2xl" />
+                                  <span>Sign out all accounts</span>
+                                </div>
+                              </button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </div>
           </div>
