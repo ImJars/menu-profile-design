@@ -18,6 +18,8 @@ export default {
         newFourth: "#828484",
         newFifth: "#939594",
         newText: "#FBFDFC",
+
+        newButton: "#323433",
       },
     },
   },
